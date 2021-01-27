@@ -16,11 +16,11 @@ import com.astrika.checqk.commonmodules.model.timings.DiscountDaysTimingDTO
 import com.astrika.checqk.commonmodules.utils.Constants
 import com.astrika.checqk.commonmodules.utils.Utils
 import com.astrika.checqk.discount.R
-import com.astrika.checqk.discount.databinding.ActivityAddDiscountTimingDialogBinding
+import com.astrika.checqk.discount.databinding.AddDiscountDialogBinding
 
 class AddDiscountTimingDialogActivity : AppCompatActivity() {
 
-    private lateinit var binding: ActivityAddDiscountTimingDialogBinding
+    private lateinit var binding: AddDiscountDialogBinding
     private lateinit var viewModel: AddDiscountTimingViewModel
     private var resultCode = 0
 
@@ -35,7 +35,7 @@ class AddDiscountTimingDialogActivity : AppCompatActivity() {
 
     private fun initBinding() {
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_add_discount_timing_dialog)
+        binding = DataBindingUtil.setContentView(this, R.layout.add_discount_dialog)
         viewModel = Utils.obtainBaseObservable(
             this,
             AddDiscountTimingViewModel::class.java,

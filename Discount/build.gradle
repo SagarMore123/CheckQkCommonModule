@@ -61,5 +61,9 @@ dependencies {
     annotationProcessor "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
     annotationProcessor "androidx.lifecycle:lifecycle-runtime-ktx:$lifecycle_version"
 
+    // Glide Image Loading
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.11.0'
+    implementation 'com.github.bumptech.glide:glide:4.11.0'
+
 
 }

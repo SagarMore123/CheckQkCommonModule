@@ -1,4 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest package="com.astrika.checqk.discount">
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.astrika.checqk.discount">
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <activity android:name=".view.AddDiscountTimingDialogActivity" />
+
+    </application>
 
 </manifest>

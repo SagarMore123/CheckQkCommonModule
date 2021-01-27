@@ -12,9 +12,9 @@ import android.view.LayoutInflater
 import androidx.annotation.NonNull
 import androidx.core.content.res.ResourcesCompat
 import com.astrika.checqk.commonmodules.R
-import kotlinx.android.synthetic.main.progress_bar.view.*
+import kotlinx.android.synthetic.main.progress_bar_module.view.*
 
-class CustomProgressBar {
+class CustomProgressBarModule {
 
     var dialog: Dialog? = null
 
@@ -28,7 +28,7 @@ class CustomProgressBar {
 
         val inflator = context.getSystemService(Context.LAYOUT_INFLATER_SERVICE) as LayoutInflater
 
-        val view = inflator.inflate(R.layout.progress_bar, null)
+        val view = inflator.inflate(R.layout.progress_bar_module, null)
 
         if (title != null) {
 

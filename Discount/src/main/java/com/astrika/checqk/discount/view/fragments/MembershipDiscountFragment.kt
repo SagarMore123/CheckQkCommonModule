@@ -16,7 +16,7 @@ import com.astrika.checqk.commonmodules.model.discount.OutletDiscountMembershipP
 import com.astrika.checqk.commonmodules.model.timings.DayDTO
 import com.astrika.checqk.commonmodules.model.timings.DiscountDaysTimingDTO
 import com.astrika.checqk.commonmodules.utils.Constants
-import com.astrika.checqk.commonmodules.utils.CustomProgressBar
+import com.astrika.checqk.commonmodules.utils.CustomProgressBarModule
 import com.astrika.checqk.commonmodules.utils.Utils
 import com.astrika.checqk.discount.R
 import com.astrika.checqk.discount.adapters.DiscountDaysAdapter
@@ -50,7 +50,7 @@ class MembershipDiscountFragment : Fragment(),
     private var editTimingPosition = 0
     private var editMainContainerPosition = 0
     private var isEdit = false
-    var progressBar = CustomProgressBar()
+    var progressBar = CustomProgressBarModule()
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,

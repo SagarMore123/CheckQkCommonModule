@@ -14,7 +14,7 @@ import com.astrika.checqk.commonmodules.model.discount.OutletDiscountDetailsDTO
 import com.astrika.checqk.commonmodules.model.timings.DayDTO
 import com.astrika.checqk.commonmodules.model.timings.DiscountDaysTimingDTO
 import com.astrika.checqk.commonmodules.utils.Constants
-import com.astrika.checqk.commonmodules.utils.CustomProgressBar
+import com.astrika.checqk.commonmodules.utils.CustomProgressBarModule
 import com.astrika.checqk.commonmodules.utils.Utils
 import com.astrika.checqk.discount.R
 import com.astrika.checqk.discount.adapters.DiscountDaysAdapter
@@ -44,7 +44,7 @@ class InHouseCardsFragment : Fragment(),
     private lateinit var discountMembershipHolderAdapter: InHouseMembershipHolderAdapter
     private lateinit var discountMembershipTypeAdapter: MembershipTypeAdapter
     private lateinit var discountDaysAdapter: DiscountDaysAdapter
-    var progressBar = CustomProgressBar()
+    var progressBar = CustomProgressBarModule()
 
     private var param1: String? = null
     private var param2: String? = null

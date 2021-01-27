@@ -1,2 +1,4 @@
+include ':Discount'
+include ':Timings'
 include ':app'
 rootProject.name = "ChecQk Common Modules"

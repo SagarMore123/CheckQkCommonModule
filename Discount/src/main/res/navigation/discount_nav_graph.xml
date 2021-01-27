@@ -8,7 +8,7 @@
 
     <fragment
         android:id="@+id/MembershipDiscountFragment"
-        android:name="com.astrika.checqk.discount.view.fragments.CravXCardDiscountFragment"
+        android:name="com.astrika.checqk.discount.view.fragments.MembershipDiscountFragment"
         tools:layout="@layout/fragment_membership_discount">
 
     </fragment>

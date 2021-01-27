@@ -160,6 +160,7 @@ class MembershipDiscountFragment : Fragment(),
 
     override fun onDayItemClick(position: Int, dayDTO: DayDTO) {
         viewModel.onDayItemClick(position, dayDTO)
+
     }
 
     override fun onAddTimeSlotItemClick(position: Int, dayDTO: DayDTO) {

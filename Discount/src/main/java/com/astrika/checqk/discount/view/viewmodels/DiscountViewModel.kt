@@ -17,6 +17,7 @@ import com.astrika.checqk.discount.model.timings.DayDTO
 import com.astrika.checqk.discount.model.timings.DaysEnum
 import com.astrika.checqk.discount.model.timings.DiscountDaysTimingDTO
 import com.astrika.checqk.discount.model.timings.DiscountEnum
+import com.astrika.checqk.discount.network.NetworkController
 import com.astrika.checqk.discount.network.network_utils.IDataSourceCallback
 import com.astrika.checqk.discount.source.UserRepository
 import com.astrika.checqk.discount.utils.Constants
@@ -33,7 +34,7 @@ class DiscountViewModel(
 
     var showProgressBar = MutableLiveData<Boolean>()
     private var sharedPreferences: SharedPreferences = Constants.getSharedPreferences(application)
-    private var outLetId = 0L
+    private var outletId = 0L
     private var productId = 0L
     var discountPlansLayoutVisible = MutableLiveData<Boolean>(true)
 
@@ -75,7 +76,7 @@ class DiscountViewModel(
     var observableBoolean = MutableLiveData<Boolean>(false)
 
     init {
-        outLetId =
+        outletId =
             Constants.decrypt(sharedPreferences.getString(Constants.OUTLET_ID, ""))?.toLong() ?: 0L
         productId =
             Constants.decrypt(sharedPreferences.getString(Constants.PRODUCT_ID, ""))?.toLong() ?: 0L
@@ -83,12 +84,25 @@ class DiscountViewModel(
         populateMasters()
 
 
+    }
+
+    fun setAccessTokenOutletId(accessToken: String, outletId: Long) {
+
+        this.outletId = outletId
+        NetworkController.accessToken = accessToken
+        sharedPreferences.edit()?.putString(
+            Constants.ACCESS_TOKEN,
+            Constants.encrypt(accessToken)
+        )?.apply()
+
         populateOutletDiscountDetailsList()
+
     }
 
     private fun populateOutletDiscountDetailsList() {
 
-        userRepository.fetchOutletDiscountDetailsList(outLetId,
+        userRepository.fetchOutletDiscountDetailsList(
+            outletId,
             object : IDataSourceCallback<ArrayList<OutletDiscountDetailsDTO>> {
 
                 override fun onDataFound(data: ArrayList<OutletDiscountDetailsDTO>) {
@@ -132,7 +146,8 @@ class DiscountViewModel(
                 }
             })
 
-        userRepository.fetchOutletOneDashboardMasterDetails(productId, outLetId,
+        userRepository.fetchOutletOneDashboardMasterDetails(
+            productId, outletId,
             object : IDataSourceCallback<ArrayList<CorporateMembershipOneDashboardDTO>> {
 
                 override fun onDataFound(data: ArrayList<CorporateMembershipOneDashboardDTO>) {

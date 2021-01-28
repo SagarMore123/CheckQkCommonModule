@@ -12,6 +12,7 @@
     <application
         android:allowBackup="true"
         android:largeHeap="true"
+        android:theme="@style/AppTheme.NoActionBar"
         android:usesCleartextTraffic="true">
 
         <activity android:name=".view.DiscountManagementActivity" />

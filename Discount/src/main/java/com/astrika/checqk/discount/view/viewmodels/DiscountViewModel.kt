@@ -33,8 +33,6 @@ class DiscountViewModel(
 ) : GenericBaseObservable(application, owner, view) {
 
     var showProgressBar = MutableLiveData<Boolean>()
-    private var sharedPreferences: SharedPreferences = Constants.getSharedPreferences(application)
-    private var outletId = 0L
     private var productId = 0L
     var discountPlansLayoutVisible = MutableLiveData<Boolean>(true)
 
@@ -76,33 +74,43 @@ class DiscountViewModel(
     var observableBoolean = MutableLiveData<Boolean>(false)
 
     init {
-        outletId =
-            Constants.decrypt(sharedPreferences.getString(Constants.OUTLET_ID, ""))?.toLong() ?: 0L
-        productId =
-            Constants.decrypt(sharedPreferences.getString(Constants.PRODUCT_ID, ""))?.toLong() ?: 0L
+//        outletId.value = Constants.decrypt(sharedPreferences.getString(Constants.OUTLET_ID, ""))?.toLong() ?: 0L
+//        productId = Constants.decrypt(sharedPreferences.getString(Constants.PRODUCT_ID, ""))?.toLong() ?: 0L
         initiateDays()
         populateMasters()
+        applicationModule = application
 
 
     }
 
-    fun setAccessTokenOutletId(accessToken: String, outletId: Long) {
-
-        this.outletId = outletId
-        NetworkController.accessToken = accessToken
-        sharedPreferences.edit()?.putString(
-            Constants.ACCESS_TOKEN,
-            Constants.encrypt(accessToken)
-        )?.apply()
-
+    fun abc() {
         populateOutletDiscountDetailsList()
+    }
+
+    companion object {
+
+        lateinit var applicationModule: Application
+        var sharedPreferences: SharedPreferences = Constants.getSharedPreferences(applicationModule)
+        var outletId = MutableLiveData<Long>(0)
+
+        fun setAccessTokenOutletId(accessToken: String, outletId: Long) {
+
+            this.outletId.value = outletId
+            NetworkController.accessToken = accessToken
+            sharedPreferences.edit()?.putString(
+                Constants.ACCESS_TOKEN,
+                Constants.encrypt(accessToken)
+            )?.apply()
+
+        }
+
 
     }
 
-    private fun populateOutletDiscountDetailsList() {
+    fun populateOutletDiscountDetailsList() {
 
         userRepository.fetchOutletDiscountDetailsList(
-            outletId,
+            outletId.value ?: 0,
             object : IDataSourceCallback<ArrayList<OutletDiscountDetailsDTO>> {
 
                 override fun onDataFound(data: ArrayList<OutletDiscountDetailsDTO>) {
@@ -147,7 +155,7 @@ class DiscountViewModel(
             })
 
         userRepository.fetchOutletOneDashboardMasterDetails(
-            productId, outletId,
+            productId, outletId.value ?: 0,
             object : IDataSourceCallback<ArrayList<CorporateMembershipOneDashboardDTO>> {
 
                 override fun onDataFound(data: ArrayList<CorporateMembershipOneDashboardDTO>) {

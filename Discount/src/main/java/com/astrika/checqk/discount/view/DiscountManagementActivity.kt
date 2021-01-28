@@ -14,6 +14,7 @@ import com.astrika.checqk.discount.model.discount.DiscountCategoryDTO
 import com.astrika.checqk.discount.utils.Constants
 import com.astrika.checqk.discount.utils.Utils
 import com.astrika.checqk.discount.view.viewmodels.DiscountViewModel
+import com.astrika.checqk.discount.view.viewmodels.DiscountViewModel.Companion as DiscountViewModel1
 
 class DiscountManagementActivity : AppCompatActivity(),
     DiscountCategoriesAdapter.OnItemClickListener {
@@ -62,8 +63,26 @@ class DiscountManagementActivity : AppCompatActivity(),
                     discountViewModel.membershipDiscountArrayList
                 )
                 navController.navigate(R.id.MembershipDiscountFragment, bundle)
+
             }
         })
+
+        DiscountViewModel1.outletId.observe(this, {
+            if (it != null && it != 0L) {
+                discountViewModel.populateOutletDiscountDetailsList()
+            }
+        })
+
+
+    }
+
+    companion object {
+        fun abc() {
+
+        }
+    }
+
+    fun xyz() {
 
     }
 

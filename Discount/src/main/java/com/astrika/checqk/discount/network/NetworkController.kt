@@ -588,7 +588,7 @@ class NetworkController {
         val response =
             UserApi.retrofitService.fetchOutletOneDashboardMasterDetails(
 //                accessToken,
-                95,
+                productId,
                 outletId
             )
         val responseCall: Call<ResponseBody> = response

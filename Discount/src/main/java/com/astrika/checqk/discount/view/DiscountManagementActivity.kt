@@ -26,7 +26,7 @@ class DiscountManagementActivity : AppCompatActivity(),
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_discount_management)
-        setSupportActionBar(binding.toolbar)
+//        setSupportActionBar(binding.toolbar)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 

@@ -34,7 +34,7 @@ class NetworkController {
             if (instance == null) {
                 instance = NetworkController()
             }
-            accessToken = Constants.getAccessToken(mContext) ?: ""
+//            accessToken = Constants.getAccessToken(mContext) ?: ""
             emailId = Constants.getEmailId(mContext) ?: ""
             return instance as NetworkController
         }

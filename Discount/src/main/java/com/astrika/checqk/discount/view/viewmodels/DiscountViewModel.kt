@@ -20,7 +20,6 @@ import com.astrika.checqk.discount.model.timings.DiscountEnum
 import com.astrika.checqk.discount.network.NetworkController
 import com.astrika.checqk.discount.network.network_utils.IDataSourceCallback
 import com.astrika.checqk.discount.source.UserRepository
-import com.astrika.checqk.discount.utils.Constants
 import com.astrika.checqk.discount.utils.GenericBaseObservable
 
 class DiscountViewModel(
@@ -94,14 +93,16 @@ class DiscountViewModel(
         var productId = 0L
 
         fun setAccessTokenOutletId(accessToken: String, outletId: Long, productId: Long) {
-            sharedPreferences = Constants.getSharedPreferences(applicationModule)
+//            sharedPreferences = Constants.getSharedPreferences(applicationModule)
             this.outletId.value = outletId
             this.productId = productId
             NetworkController.accessToken = accessToken
+/*
             sharedPreferences.edit()?.putString(
                 Constants.ACCESS_TOKEN,
                 Constants.encrypt(accessToken)
             )?.apply()
+*/
 
         }
 

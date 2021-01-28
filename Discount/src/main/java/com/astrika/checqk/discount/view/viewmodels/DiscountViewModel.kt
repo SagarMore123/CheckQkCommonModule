@@ -89,12 +89,12 @@ class DiscountViewModel(
     companion object {
 
         lateinit var applicationModule: Application
-        var sharedPreferences: SharedPreferences = Constants.getSharedPreferences(applicationModule)
+        lateinit var sharedPreferences: SharedPreferences
         var outletId = MutableLiveData<Long>(0)
         var productId = 0L
 
         fun setAccessTokenOutletId(accessToken: String, outletId: Long, productId: Long) {
-
+            sharedPreferences = Constants.getSharedPreferences(applicationModule)
             this.outletId.value = outletId
             this.productId = productId
             NetworkController.accessToken = accessToken

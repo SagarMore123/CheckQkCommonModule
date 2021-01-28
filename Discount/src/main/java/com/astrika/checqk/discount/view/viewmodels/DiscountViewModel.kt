@@ -20,6 +20,7 @@ import com.astrika.checqk.discount.model.timings.DiscountEnum
 import com.astrika.checqk.discount.network.NetworkController
 import com.astrika.checqk.discount.network.network_utils.IDataSourceCallback
 import com.astrika.checqk.discount.source.UserRepository
+import com.astrika.checqk.discount.utils.Constants
 import com.astrika.checqk.discount.utils.GenericBaseObservable
 
 class DiscountViewModel(
@@ -68,7 +69,7 @@ class DiscountViewModel(
     var oneDashboardDiscountArrayList = ArrayList<OutletDiscountDetailsDTO>()
     var oneDashboardDiscountMastersArrayList = ArrayList<CorporateMembershipOneDashboardDTO>()
 
-
+    val sharedPreferences: SharedPreferences = Constants.getSharedPreferences(application)
     var observableBoolean = MutableLiveData<Boolean>(false)
 
     init {

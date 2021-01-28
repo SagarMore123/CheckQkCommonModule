@@ -11,6 +11,7 @@ import com.astrika.checqk.discount.R
 import com.astrika.checqk.discount.adapters.DiscountCategoriesAdapter
 import com.astrika.checqk.discount.databinding.ActivityDiscountManagementBinding
 import com.astrika.checqk.discount.model.discount.DiscountCategoryDTO
+import com.astrika.checqk.discount.network.NetworkController
 import com.astrika.checqk.discount.utils.Constants
 import com.astrika.checqk.discount.utils.Utils
 import com.astrika.checqk.discount.view.viewmodels.DiscountViewModel
@@ -69,6 +70,10 @@ class DiscountManagementActivity : AppCompatActivity(),
 
         DiscountViewModel1.outletId.observe(this, {
             if (it != null && it != 0L) {
+                discountViewModel.sharedPreferences.edit()?.putString(
+                    Constants.ACCESS_TOKEN,
+                    Constants.encrypt(NetworkController.accessToken)
+                )?.apply()
                 discountViewModel.populateOutletDiscountDetailsList()
             }
         })

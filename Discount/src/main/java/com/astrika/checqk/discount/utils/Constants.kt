@@ -179,8 +179,13 @@ class Constants {
         fun getAccessToken(context: Context?): String? {
             sharedPreferences = getSharedPreferences(context!!)
             return try {
-                "Bearer ${decrypt(sharedPreferences.getString(ACCESS_TOKEN, ""))}"
-
+                var accessToken = "${decrypt(sharedPreferences.getString(ACCESS_TOKEN, ""))}"
+                accessToken = if (accessToken.contains("Bearer")) {
+                    "${decrypt(sharedPreferences.getString(ACCESS_TOKEN, ""))}"
+                } else {
+                    "Bearer ${decrypt(sharedPreferences.getString(ACCESS_TOKEN, ""))}"
+                }
+                accessToken
             } catch (e: Exception) {
                 ""
             }

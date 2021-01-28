@@ -7,20 +7,20 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.astrika.checqk.commonmodules.discount.viewmodels.CravXCardsDiscountViewModel
-import com.astrika.checqk.commonmodules.model.SystemValueMasterDTO
-import com.astrika.checqk.commonmodules.model.discount.CravxCardsMembershipHolderDTO
-import com.astrika.checqk.commonmodules.model.discount.OutletDiscountDetailsDTO
-import com.astrika.checqk.commonmodules.model.timings.DayDTO
-import com.astrika.checqk.commonmodules.model.timings.DiscountDaysTimingDTO
-import com.astrika.checqk.commonmodules.utils.Constants
-import com.astrika.checqk.commonmodules.utils.CustomProgressBarModule
-import com.astrika.checqk.commonmodules.utils.Utils
 import com.astrika.checqk.discount.R
 import com.astrika.checqk.discount.adapters.CravxCardsMembershipHolderAdapter
 import com.astrika.checqk.discount.adapters.DiscountDaysAdapter
 import com.astrika.checqk.discount.adapters.MembershipTypeAdapter
 import com.astrika.checqk.discount.databinding.FragmentCravxCardDiscountBinding
+import com.astrika.checqk.discount.model.SystemValueMasterDTO
+import com.astrika.checqk.discount.model.discount.CravxCardsMembershipHolderDTO
+import com.astrika.checqk.discount.model.discount.OutletDiscountDetailsDTO
+import com.astrika.checqk.discount.model.timings.DayDTO
+import com.astrika.checqk.discount.model.timings.DiscountDaysTimingDTO
+import com.astrika.checqk.discount.utils.Constants
+import com.astrika.checqk.discount.utils.CustomProgressBarModule
+import com.astrika.checqk.discount.utils.Utils
+import com.astrika.checqk.discount.view.viewmodels.CravXCardsDiscountViewModel
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.

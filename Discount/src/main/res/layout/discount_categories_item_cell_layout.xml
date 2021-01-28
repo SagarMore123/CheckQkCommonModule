@@ -8,7 +8,7 @@
 
         <variable
             name="outletDiscountCategoryDTO"
-            type="com.astrika.checqk.commonmodules.model.discount.DiscountCategoryDTO" />
+            type="com.astrika.checqk.discount.model.discount.DiscountCategoryDTO" />
 
     </data>
 

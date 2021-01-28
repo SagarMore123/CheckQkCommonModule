@@ -9,7 +9,7 @@
 
         <variable
             name="discountTimingDTO"
-            type="com.astrika.checqk.commonmodules.model.timings.DiscountDaysTimingDTO" />
+            type="com.astrika.checqk.discount.model.timings.DiscountDaysTimingDTO" />
 
     </data>
 

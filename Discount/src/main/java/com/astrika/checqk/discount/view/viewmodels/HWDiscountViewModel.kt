@@ -6,20 +6,20 @@ import android.content.SharedPreferences
 import android.view.View
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
-import com.astrika.checqk.commonmodules.master_controller.source.MasterRepository
-import com.astrika.checqk.commonmodules.master_controller.source.daos.SystemValueMasterDao
-import com.astrika.checqk.commonmodules.model.SystemValueMasterDTO
-import com.astrika.checqk.commonmodules.model.discount.HWMembershipHolderDTO
-import com.astrika.checqk.commonmodules.model.discount.OutletDiscountDetailsDTO
-import com.astrika.checqk.commonmodules.model.timings.DayDTO
-import com.astrika.checqk.commonmodules.model.timings.DaysEnum
-import com.astrika.checqk.commonmodules.model.timings.DiscountDaysTimingDTO
-import com.astrika.checqk.commonmodules.model.timings.DiscountEnum
-import com.astrika.checqk.commonmodules.network.network_utils.IDataSourceCallback
-import com.astrika.checqk.commonmodules.source.UserRepository
-import com.astrika.checqk.commonmodules.utils.Constants
-import com.astrika.checqk.commonmodules.utils.GenericBaseObservable
-import com.astrika.checqk.commonmodules.utils.Utils
+import com.astrika.checqk.discount.master_controller.source.MasterRepository
+import com.astrika.checqk.discount.master_controller.source.daos.SystemValueMasterDao
+import com.astrika.checqk.discount.model.SystemValueMasterDTO
+import com.astrika.checqk.discount.model.discount.HWMembershipHolderDTO
+import com.astrika.checqk.discount.model.discount.OutletDiscountDetailsDTO
+import com.astrika.checqk.discount.model.timings.DayDTO
+import com.astrika.checqk.discount.model.timings.DaysEnum
+import com.astrika.checqk.discount.model.timings.DiscountDaysTimingDTO
+import com.astrika.checqk.discount.model.timings.DiscountEnum
+import com.astrika.checqk.discount.network.network_utils.IDataSourceCallback
+import com.astrika.checqk.discount.source.UserRepository
+import com.astrika.checqk.discount.utils.Constants
+import com.astrika.checqk.discount.utils.GenericBaseObservable
+import com.astrika.checqk.discount.utils.Utils
 
 class HWDiscountViewModel(
     var activity: Activity,

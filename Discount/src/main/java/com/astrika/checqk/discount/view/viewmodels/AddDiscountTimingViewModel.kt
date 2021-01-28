@@ -5,9 +5,9 @@ import android.app.Application
 import android.view.View
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
-import com.astrika.checqk.commonmodules.model.timings.DiscountDaysTimingDTO
-import com.astrika.checqk.commonmodules.utils.GenericBaseObservable
-import com.example.opposfeapp.utils.SingleLiveEvent
+import com.astrika.checqk.discount.model.timings.DiscountDaysTimingDTO
+import com.astrika.checqk.discount.utils.GenericBaseObservable
+import com.astrika.checqk.discount.utils.SingleLiveEvent
 
 class AddDiscountTimingViewModel(
     var activity: Activity,

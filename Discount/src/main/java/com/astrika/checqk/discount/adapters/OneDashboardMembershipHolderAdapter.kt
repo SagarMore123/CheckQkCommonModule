@@ -5,8 +5,8 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.astrika.checqk.commonmodules.model.discount.OneDashboardMembershipHolderDTO
 import com.astrika.checqk.discount.databinding.MembershipHolderItemCellLayoutBinding
+import com.astrika.checqk.discount.model.discount.OneDashboardMembershipHolderDTO
 
 class OneDashboardMembershipHolderAdapter(
     private var mActivity: Activity,

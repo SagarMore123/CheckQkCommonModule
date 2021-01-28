@@ -7,20 +7,20 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.astrika.checqk.commonmodules.discount.viewmodels.HWDiscountViewModel
-import com.astrika.checqk.commonmodules.model.SystemValueMasterDTO
-import com.astrika.checqk.commonmodules.model.discount.HWMembershipHolderDTO
-import com.astrika.checqk.commonmodules.model.discount.OutletDiscountDetailsDTO
-import com.astrika.checqk.commonmodules.model.timings.DayDTO
-import com.astrika.checqk.commonmodules.model.timings.DiscountDaysTimingDTO
-import com.astrika.checqk.commonmodules.utils.Constants
-import com.astrika.checqk.commonmodules.utils.CustomProgressBarModule
-import com.astrika.checqk.commonmodules.utils.Utils
 import com.astrika.checqk.discount.R
 import com.astrika.checqk.discount.adapters.DiscountDaysAdapter
 import com.astrika.checqk.discount.adapters.HWMembershipHolderAdapter
 import com.astrika.checqk.discount.adapters.MembershipTypeAdapter
 import com.astrika.checqk.discount.databinding.FragmentHungryWungryDiscountBinding
+import com.astrika.checqk.discount.model.SystemValueMasterDTO
+import com.astrika.checqk.discount.model.discount.HWMembershipHolderDTO
+import com.astrika.checqk.discount.model.discount.OutletDiscountDetailsDTO
+import com.astrika.checqk.discount.model.timings.DayDTO
+import com.astrika.checqk.discount.model.timings.DiscountDaysTimingDTO
+import com.astrika.checqk.discount.utils.Constants
+import com.astrika.checqk.discount.utils.CustomProgressBarModule
+import com.astrika.checqk.discount.utils.Utils
+import com.astrika.checqk.discount.view.viewmodels.HWDiscountViewModel
 
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
 private const val ARG_PARAM1 = "param1"

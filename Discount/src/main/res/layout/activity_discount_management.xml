@@ -9,7 +9,7 @@
 
         <variable
             name="discountViewModel"
-            type="com.astrika.checqk.commonmodules.discount.viewmodels.DiscountViewModel" />
+            type="com.astrika.checqk.discount.view.viewmodels.DiscountViewModel" />
 
     </data>
 

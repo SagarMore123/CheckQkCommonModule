@@ -11,12 +11,12 @@ import android.text.style.TextAppearanceSpan
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
-import com.astrika.checqk.commonmodules.discount.viewmodels.AddDiscountTimingViewModel
-import com.astrika.checqk.commonmodules.model.timings.DiscountDaysTimingDTO
-import com.astrika.checqk.commonmodules.utils.Constants
-import com.astrika.checqk.commonmodules.utils.Utils
 import com.astrika.checqk.discount.R
 import com.astrika.checqk.discount.databinding.AddDiscountDialogBinding
+import com.astrika.checqk.discount.model.timings.DiscountDaysTimingDTO
+import com.astrika.checqk.discount.utils.Constants
+import com.astrika.checqk.discount.utils.Utils
+import com.astrika.checqk.discount.view.viewmodels.AddDiscountTimingViewModel
 
 class AddDiscountTimingDialogActivity : AppCompatActivity() {
 

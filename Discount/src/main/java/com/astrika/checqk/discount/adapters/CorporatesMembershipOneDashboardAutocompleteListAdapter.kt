@@ -3,8 +3,8 @@ package com.astrika.checqk.discount.adapters
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.astrika.checqk.commonmodules.model.discount.CorporateMembershipOneDashboardDTO
 import com.astrika.checqk.discount.databinding.BasicInfoMastersItemCellLayoutBinding
+import com.astrika.checqk.discount.model.discount.CorporateMembershipOneDashboardDTO
 
 class CorporatesMembershipOneDashboardAutocompleteListAdapter(
     private val clickListener: OnItemClickListener

@@ -8,11 +8,11 @@ import android.widget.LinearLayout
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.astrika.checqk.commonmodules.model.timings.DayDTO
-import com.astrika.checqk.commonmodules.model.timings.DiscountDaysTimingDTO
 import com.astrika.checqk.discount.R
 import com.astrika.checqk.discount.databinding.DiscountDayTimingItemCellLayoutBinding
 import com.astrika.checqk.discount.databinding.DiscountTimingItemCellLayoutBinding
+import com.astrika.checqk.discount.model.timings.DayDTO
+import com.astrika.checqk.discount.model.timings.DiscountDaysTimingDTO
 import java.util.*
 import kotlin.Comparator
 

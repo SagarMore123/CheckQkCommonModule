@@ -8,23 +8,19 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
-import com.astrika.checqk.commonmodules.adapters.DaysAdapter
-import com.astrika.checqk.commonmodules.discount.viewmodels.MembershipDiscountViewModel
-import com.astrika.checqk.commonmodules.model.SystemValueMasterDTO
-import com.astrika.checqk.commonmodules.model.discount.OutletDiscountDetailsDTO
-import com.astrika.checqk.commonmodules.model.discount.OutletDiscountMembershipPlanDTO
-import com.astrika.checqk.commonmodules.model.timings.DayDTO
-import com.astrika.checqk.commonmodules.model.timings.DiscountDaysTimingDTO
-import com.astrika.checqk.commonmodules.utils.Constants
-import com.astrika.checqk.commonmodules.utils.CustomProgressBarModule
-import com.astrika.checqk.commonmodules.utils.Utils
 import com.astrika.checqk.discount.R
-import com.astrika.checqk.discount.adapters.DiscountDaysAdapter
-import com.astrika.checqk.discount.adapters.DiscountMembershipPlanAdapter
-import com.astrika.checqk.discount.adapters.MembershipHolderAdapter
-import com.astrika.checqk.discount.adapters.MembershipTypeAdapter
+import com.astrika.checqk.discount.adapters.*
 import com.astrika.checqk.discount.databinding.FragmentMembershipDiscountBinding
+import com.astrika.checqk.discount.model.SystemValueMasterDTO
+import com.astrika.checqk.discount.model.discount.OutletDiscountDetailsDTO
+import com.astrika.checqk.discount.model.discount.OutletDiscountMembershipPlanDTO
+import com.astrika.checqk.discount.model.timings.DayDTO
+import com.astrika.checqk.discount.model.timings.DiscountDaysTimingDTO
+import com.astrika.checqk.discount.utils.Constants
+import com.astrika.checqk.discount.utils.CustomProgressBarModule
+import com.astrika.checqk.discount.utils.Utils
 import com.astrika.checqk.discount.view.AddDiscountTimingDialogActivity
+import com.astrika.checqk.discount.view.viewmodels.MembershipDiscountViewModel
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.

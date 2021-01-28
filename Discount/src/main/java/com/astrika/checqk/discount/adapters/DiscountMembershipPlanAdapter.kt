@@ -4,8 +4,8 @@ import android.app.Activity
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.astrika.checqk.commonmodules.model.discount.OutletDiscountMembershipPlanDTO
 import com.astrika.checqk.discount.databinding.BasicInfoMastersItemCellLayoutBinding
+import com.astrika.checqk.discount.model.discount.OutletDiscountMembershipPlanDTO
 
 class DiscountMembershipPlanAdapter(
     private var mActivity: Activity,

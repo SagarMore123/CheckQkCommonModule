@@ -7,13 +7,13 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import com.astrika.checqk.commonmodules.discount.viewmodels.DiscountViewModel
-import com.astrika.checqk.commonmodules.model.discount.DiscountCategoryDTO
-import com.astrika.checqk.commonmodules.utils.Constants
-import com.astrika.checqk.commonmodules.utils.Utils
 import com.astrika.checqk.discount.R
 import com.astrika.checqk.discount.adapters.DiscountCategoriesAdapter
 import com.astrika.checqk.discount.databinding.ActivityDiscountManagementBinding
+import com.astrika.checqk.discount.model.discount.DiscountCategoryDTO
+import com.astrika.checqk.discount.utils.Constants
+import com.astrika.checqk.discount.utils.Utils
+import com.astrika.checqk.discount.view.viewmodels.DiscountViewModel
 
 class DiscountManagementActivity : AppCompatActivity(),
     DiscountCategoriesAdapter.OnItemClickListener {

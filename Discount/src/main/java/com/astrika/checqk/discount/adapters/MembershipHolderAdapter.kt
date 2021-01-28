@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
-import com.astrika.checqk.commonmodules.model.SystemValueMasterDTO
 import com.astrika.checqk.discount.databinding.MembershipHolderItemCellLayoutBinding
+import com.astrika.checqk.discount.model.SystemValueMasterDTO
 
 class MembershipHolderAdapter(
     private var mActivity: Activity,

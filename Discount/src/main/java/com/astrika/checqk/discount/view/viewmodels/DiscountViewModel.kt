@@ -33,7 +33,6 @@ class DiscountViewModel(
 ) : GenericBaseObservable(application, owner, view) {
 
     var showProgressBar = MutableLiveData<Boolean>()
-    private var productId = 0L
     var discountPlansLayoutVisible = MutableLiveData<Boolean>(true)
 
     // Discount Category
@@ -92,10 +91,12 @@ class DiscountViewModel(
         lateinit var applicationModule: Application
         var sharedPreferences: SharedPreferences = Constants.getSharedPreferences(applicationModule)
         var outletId = MutableLiveData<Long>(0)
+        var productId = 0L
 
-        fun setAccessTokenOutletId(accessToken: String, outletId: Long) {
+        fun setAccessTokenOutletId(accessToken: String, outletId: Long, productId: Long) {
 
             this.outletId.value = outletId
+            this.productId = productId
             NetworkController.accessToken = accessToken
             sharedPreferences.edit()?.putString(
                 Constants.ACCESS_TOKEN,

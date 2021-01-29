@@ -82,12 +82,12 @@
 
                 <com.google.android.material.textfield.TextInputEditText
                     style="@style/EditTextCommonStyle"
+                    time="@{addDiscountTimingViewModel.fromTime}"
                     android:drawableEnd="@drawable/ic_keyboard_arrow_down_black_24dp"
                     android:drawablePadding="5dp"
                     android:focusable="false"
                     android:singleLine="true"
-                    android:text="@{addDiscountTimingViewModel.fromTime}"
-                    app:time="@{addDiscountTimingViewModel.fromTime}" />
+                    android:text="@{addDiscountTimingViewModel.fromTime}" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

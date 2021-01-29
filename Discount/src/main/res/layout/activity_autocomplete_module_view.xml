@@ -18,7 +18,7 @@
         android:layout_margin="10dp"
         android:background="@color/colorWhite"
         android:orientation="vertical"
-        tools:context=".utils.AutocompleteViewActivity">
+        tools:context=".utils.AutocompleteViewModuleActivity">
 
 
         <com.google.android.material.textfield.TextInputEditText

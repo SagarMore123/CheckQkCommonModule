@@ -19,7 +19,7 @@ import com.astrika.checqk.discount.model.discount.OneDashboardMembershipHolderDT
 import com.astrika.checqk.discount.model.discount.OutletDiscountDetailsDTO
 import com.astrika.checqk.discount.model.timings.DayDTO
 import com.astrika.checqk.discount.model.timings.DiscountDaysTimingDTO
-import com.astrika.checqk.discount.utils.AutocompleteViewActivity
+import com.astrika.checqk.discount.utils.AutocompleteViewModuleActivity
 import com.astrika.checqk.discount.utils.Constants
 import com.astrika.checqk.discount.utils.CustomProgressBarModule
 import com.astrika.checqk.discount.utils.Utils
@@ -140,7 +140,7 @@ class OneDashboardFragment : Fragment(),
         viewModel.getmOnCorporateClick().observeChange(requireActivity(), Observer {
 
             val requestCode = Constants.CORPORATE_MEMBERSHIP_ONE_DASHBOARD_CODE
-            val intent = Intent(activity, AutocompleteViewActivity::class.java)
+            val intent = Intent(activity, AutocompleteViewModuleActivity::class.java)
             intent.putExtra(Constants.SELECTED_DROPDOWN_ITEM_RESULT_CODE, requestCode)
             intent.putExtra(
                 Constants.CORPORATE_MEMBERSHIPS_ONE_DASHBOARD_MASTERS_KEY,

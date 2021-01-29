@@ -74,6 +74,14 @@ class DiscountManagementActivity : AppCompatActivity(),
                     Constants.ACCESS_TOKEN,
                     Constants.encrypt(NetworkController.accessToken)
                 )?.apply()
+                discountViewModel.sharedPreferences.edit()?.putString(
+                    Constants.OUTLET_ID,
+                    Constants.encrypt(it.toString())
+                )?.apply()
+                discountViewModel.sharedPreferences.edit()?.putString(
+                    Constants.PRODUCT_ID,
+                    Constants.encrypt(DiscountViewModel1.productId.toString())
+                )?.apply()
                 discountViewModel.populateOutletDiscountDetailsList()
             }
         })

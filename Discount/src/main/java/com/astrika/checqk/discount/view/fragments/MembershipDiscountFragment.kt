@@ -19,7 +19,7 @@ import com.astrika.checqk.discount.model.timings.DiscountDaysTimingDTO
 import com.astrika.checqk.discount.utils.Constants
 import com.astrika.checqk.discount.utils.CustomProgressBarModule
 import com.astrika.checqk.discount.utils.Utils
-import com.astrika.checqk.discount.view.AddDiscountTimingDialogActivity
+import com.astrika.checqk.discount.view.AddDiscountTimingDialogModuleActivity
 import com.astrika.checqk.discount.view.viewmodels.MembershipDiscountViewModel
 
 /**
@@ -168,7 +168,7 @@ class MembershipDiscountFragment : Fragment(),
             editMainContainerPosition = position
             val requestCode = Constants.DISCOUNT_TIMING_CODE
 
-            val intent = Intent(activity, AddDiscountTimingDialogActivity::class.java)
+            val intent = Intent(activity, AddDiscountTimingDialogModuleActivity::class.java)
             intent.putExtra(Constants.SELECTED_DROPDOWN_ITEM_RESULT_CODE, requestCode)
             intent.putExtra(
                 Constants.DISCOUNT_PLAN_ELIGIBLE_NAME_KEY,
@@ -207,7 +207,7 @@ class MembershipDiscountFragment : Fragment(),
         editMainContainerPosition = mainContainerPosition
 
         val requestCode = Constants.DISCOUNT_TIMING_CODE
-        val intent = Intent(activity, AddDiscountTimingDialogActivity::class.java)
+        val intent = Intent(activity, AddDiscountTimingDialogModuleActivity::class.java)
         intent.putExtra(Constants.SELECTED_DROPDOWN_ITEM_RESULT_CODE, requestCode)
 
         if (!viewModel.discountDayTimingsArrayList[mainContainerPosition].allDaySameDiscountFlag

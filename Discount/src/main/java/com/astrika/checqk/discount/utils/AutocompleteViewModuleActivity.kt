@@ -9,11 +9,11 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.astrika.checqk.discount.R
 import com.astrika.checqk.discount.adapters.CommonAutoCompleteListAdapter
-import com.astrika.checqk.discount.databinding.ActivityAutocompleteViewBinding
+import com.astrika.checqk.discount.databinding.ActivityAutocompleteModuleViewBinding
 import com.astrika.checqk.discount.model.CommonDialogDTO
 import com.astrika.checqk.discount.model.discount.CorporateMembershipOneDashboardDTO
 
-class AutocompleteViewActivity : AppCompatActivity(),
+class AutocompleteViewModuleActivity : AppCompatActivity(),
 /*
     CuisineAutocompleteListAdapter.OnItemClickListener,
     CountryAutocompleteListAdapter.OnItemClickListener,
@@ -26,7 +26,7 @@ class AutocompleteViewActivity : AppCompatActivity(),
 //    CorporatesMembershipOneDashboardAutocompleteListAdapter.OnItemClickListener,
     CommonAutoCompleteListAdapter.OnItemClickListener {
 
-    private lateinit var binding: ActivityAutocompleteViewBinding
+    private lateinit var binding: ActivityAutocompleteModuleViewBinding
     private lateinit var viewModel: AutocompleteViewModel
 
     /*
@@ -58,7 +58,7 @@ class AutocompleteViewActivity : AppCompatActivity(),
 
     private fun initBinding() {
 
-        binding = DataBindingUtil.setContentView(this, R.layout.activity_autocomplete_view)
+        binding = DataBindingUtil.setContentView(this, R.layout.activity_autocomplete_module_view)
         viewModel = Utils.obtainBaseObservable(
             this,
             AutocompleteViewModel::class.java,

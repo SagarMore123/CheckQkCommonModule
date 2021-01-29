@@ -14,9 +14,15 @@
         android:largeHeap="true"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".view.DiscountManagementActivity" />
+        <activity
+            android:name=".view.DiscountManagementActivity"
+            android:label=""
+            android:screenOrientation="portrait" />
 
-        <activity android:name=".view.AddDiscountTimingDialogActivity" />
+        <activity
+            android:name=".view.AddDiscountTimingDialogModuleActivity"
+            android:label=""
+            android:screenOrientation="portrait" />
 
 
         <service

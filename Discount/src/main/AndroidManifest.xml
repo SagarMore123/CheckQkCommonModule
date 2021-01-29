@@ -24,7 +24,7 @@
             android:name=".view.AddDiscountTimingDialogModuleActivity"
             android:label=""
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/Theme.CommonDialog" />
 
         <activity
             android:name=".utils.AutocompleteViewModuleActivity"

@@ -19,6 +19,10 @@
         <activity android:name=".view.AddDiscountTimingDialogActivity" />
 
 
+        <service
+            android:name=".master_controller.sync.MasterSyncIntentService"
+            android:exported="false" />
+
     </application>
 
 </manifest>

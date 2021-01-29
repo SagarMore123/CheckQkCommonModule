@@ -2,12 +2,14 @@ package com.astrika.checqk.discount.view.viewmodels
 
 import android.app.Activity
 import android.app.Application
+import android.content.Intent
 import android.content.SharedPreferences
 import android.view.View
 import androidx.lifecycle.LifecycleOwner
 import androidx.lifecycle.MutableLiveData
 import com.astrika.checqk.discount.master_controller.source.MasterRepository
 import com.astrika.checqk.discount.master_controller.source.daos.SystemValueMasterDao
+import com.astrika.checqk.discount.master_controller.sync.MasterSyncIntentService
 import com.astrika.checqk.discount.model.SystemValueMasterDTO
 import com.astrika.checqk.discount.model.discount.CorporateMembershipOneDashboardDTO
 import com.astrika.checqk.discount.model.discount.DiscountCategoryDTO
@@ -79,11 +81,11 @@ class DiscountViewModel(
         populateMasters()
         applicationModule = application
 
+        val intentToSyncImmediately = Intent(application, MasterSyncIntentService::class.java)
+        intentToSyncImmediately.putExtra(Constants.IS_SPLASH_MASTER, true)
+        application.startService(intentToSyncImmediately)
 
-    }
 
-    fun abc() {
-        populateOutletDiscountDetailsList()
     }
 
     companion object {

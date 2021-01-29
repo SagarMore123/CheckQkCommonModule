@@ -17,12 +17,20 @@
         <activity
             android:name=".view.DiscountManagementActivity"
             android:label=""
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
 
         <activity
             android:name=".view.AddDiscountTimingDialogModuleActivity"
             android:label=""
-            android:screenOrientation="portrait" />
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.NoActionBar" />
+
+        <activity
+            android:name=".utils.AutocompleteViewModuleActivity"
+            android:label=""
+            android:screenOrientation="portrait"
+            android:theme="@style/Theme.CommonDialog" />
 
 
         <service

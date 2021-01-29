@@ -21,7 +21,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:theme="@style/AppTheme.AppBarOverlay"
-            android:visibility="gone"
             app:elevation="0dp">
 
             <LinearLayout
@@ -35,6 +34,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="?attr/actionBarSize"
                     android:background="@color/colorDashboardToolbar"
+                    android:theme="@style/Theme.CommonDialog"
                     app:layout_collapseMode="parallax"
                     app:popupTheme="@style/AppTheme.PopupOverlay">
 

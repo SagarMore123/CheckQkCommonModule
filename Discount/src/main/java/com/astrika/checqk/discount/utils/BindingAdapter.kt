@@ -89,12 +89,12 @@ class BindingAdapter {
         }
 
         @JvmStatic
-        @BindingAdapter(value = ["app:time"], requireAll = true)
+        @BindingAdapter(value = ["time"], requireAll = true)
         fun timeClicks(editText: EditText, time: MutableLiveData<String>) {
             editText.setOnClickListener {
                 Utils.selectTime(
                     editText.context,
-                    editText.context.resources.getString(R.string.select_time),
+                    "Select Time",
                     time
                 )
             }

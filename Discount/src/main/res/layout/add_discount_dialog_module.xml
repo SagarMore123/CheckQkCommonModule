@@ -109,7 +109,7 @@
                     android:focusable="false"
                     android:singleLine="true"
                     android:text="@{addDiscountTimingViewModel.toTime}"
-                    app:time="@{addDiscountTimingViewModel.toTime}" />
+                    time="@{addDiscountTimingViewModel.toTime}" />
 
             </com.google.android.material.textfield.TextInputLayout>
 

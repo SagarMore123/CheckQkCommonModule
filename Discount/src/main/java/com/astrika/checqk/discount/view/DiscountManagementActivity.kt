@@ -45,6 +45,15 @@ class DiscountManagementActivity : AppCompatActivity(),
         discountCategoriesAdapter = DiscountCategoriesAdapter(this, this)
         binding.discountCategoryRecyclerView.adapter = discountCategoriesAdapter
 
+
+        if (intent?.getLongExtra("OutletId", 0) != null) {
+            val outletId = intent?.getLongExtra("OutletId", 0)
+            DiscountViewModel1.outletId.value = intent?.getLongExtra("OutletId", 0)
+            discountViewModel.sharedPreferences.edit()?.putString(
+                Constants.OUTLET_ID,
+                Constants.encrypt(outletId.toString())
+            )?.apply()
+        }
         observer()
 
 

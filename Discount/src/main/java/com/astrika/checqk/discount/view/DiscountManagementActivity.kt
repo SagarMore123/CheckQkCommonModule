@@ -46,6 +46,12 @@ class DiscountManagementActivity : AppCompatActivity(),
         binding.discountCategoryRecyclerView.adapter = discountCategoriesAdapter
         observer()
 
+    }
+
+
+    override fun onResume() {
+        super.onResume()
+
         val bundle = intent?.extras
         if (bundle?.containsKey("OutletId") != null) {
             if (bundle.getLong("OutletId") != null) {
@@ -54,7 +60,6 @@ class DiscountManagementActivity : AppCompatActivity(),
             }
 
         }
-
     }
 
     private fun observer() {

@@ -46,12 +46,14 @@ class DiscountManagementActivity : AppCompatActivity(),
         binding.discountCategoryRecyclerView.adapter = discountCategoriesAdapter
         observer()
 
-        if (intent?.extras?.get("OutletId") != null) {
+        val bundle = intent?.extras
+        if (bundle?.containsKey("OutletId") != null) {
+            if (bundle.getLong("OutletId") != null) {
 //            val outletId = intent?.getLongExtra("OutletId", 0)
-            DiscountViewModel1.outletId.value = (intent?.extras?.get("OutletId") ?: 0L) as Long?
+                DiscountViewModel1.outletId.value = bundle.getLong("OutletId")
+            }
 
         }
-
 
     }
 

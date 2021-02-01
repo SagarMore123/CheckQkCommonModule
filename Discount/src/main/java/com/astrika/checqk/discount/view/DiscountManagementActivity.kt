@@ -1,5 +1,6 @@
 package com.astrika.checqk.discount.view
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
@@ -24,6 +25,7 @@ class DiscountManagementActivity : AppCompatActivity(),
     lateinit var navController: NavController
     private lateinit var discountViewModel: DiscountViewModel
     private lateinit var discountCategoriesAdapter: DiscountCategoriesAdapter
+    private lateinit var sharedPreferences: SharedPreferences
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -32,6 +34,7 @@ class DiscountManagementActivity : AppCompatActivity(),
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
         navController = Navigation.findNavController(this, R.id.nav_host_fragment)
 
+        sharedPreferences = Constants.getSharedPreferences(this)
 
         discountViewModel = Utils.obtainBaseObservable(
             this,
@@ -82,15 +85,15 @@ class DiscountManagementActivity : AppCompatActivity(),
 
         DiscountViewModel1.outletId.observe(this, {
             if (it != null && it != 0L) {
-                discountViewModel.sharedPreferences.edit()?.putString(
+                sharedPreferences.edit()?.putString(
                     Constants.ACCESS_TOKEN,
                     Constants.encrypt(NetworkController.accessToken)
                 )?.apply()
-                discountViewModel.sharedPreferences.edit()?.putString(
+                sharedPreferences.edit()?.putString(
                     Constants.OUTLET_ID,
                     Constants.encrypt(it.toString())
                 )?.apply()
-                discountViewModel.sharedPreferences.edit()?.putString(
+                sharedPreferences.edit()?.putString(
                     Constants.PRODUCT_ID,
                     Constants.encrypt(DiscountViewModel1.productId.toString())
                 )?.apply()

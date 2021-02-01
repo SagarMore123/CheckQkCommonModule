@@ -91,7 +91,7 @@ class DiscountViewModel(
     companion object {
 
         lateinit var applicationModule: Application
-        lateinit var sharedPreferences: SharedPreferences
+//        lateinit var sharedPreferences: SharedPreferences
         var outletId = MutableLiveData<Long>(0)
         var productId = 0L
 

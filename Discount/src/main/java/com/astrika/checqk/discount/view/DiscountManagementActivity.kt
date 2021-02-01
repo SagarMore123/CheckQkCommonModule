@@ -48,8 +48,8 @@ class DiscountManagementActivity : AppCompatActivity(),
 
         if (intent?.extras?.get("OutletId") != null) {
 //            val outletId = intent?.getLongExtra("OutletId", 0)
-            val outletId = intent?.extras?.get("OutletId")
-            DiscountViewModel1.outletId.value = outletId as Long
+            val outletId: Long = (intent?.extras?.get("OutletId") ?: 0) as Long
+            DiscountViewModel1.outletId.value = outletId
             discountViewModel.sharedPreferences.edit()?.putString(
                 Constants.OUTLET_ID,
                 Constants.encrypt(outletId.toString())
@@ -84,10 +84,12 @@ class DiscountManagementActivity : AppCompatActivity(),
                     Constants.ACCESS_TOKEN,
                     Constants.encrypt(NetworkController.accessToken)
                 )?.apply()
+/*
                 discountViewModel.sharedPreferences.edit()?.putString(
                     Constants.OUTLET_ID,
                     Constants.encrypt(it.toString())
                 )?.apply()
+*/
                 discountViewModel.sharedPreferences.edit()?.putString(
                     Constants.PRODUCT_ID,
                     Constants.encrypt(DiscountViewModel1.productId.toString())

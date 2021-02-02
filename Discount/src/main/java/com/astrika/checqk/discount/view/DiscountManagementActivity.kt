@@ -83,7 +83,7 @@ class DiscountManagementActivity : AppCompatActivity(),
             }
         })
 
-        DiscountViewModel1.outletId.observe(this, {
+        DiscountViewModel1.outletId.observe(this, Observer {
             if (it != null && it != 0L) {
                 sharedPreferences.edit()?.putString(
                     Constants.ACCESS_TOKEN,

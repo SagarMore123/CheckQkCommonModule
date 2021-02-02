@@ -16,7 +16,6 @@ import com.astrika.checqk.discount.network.NetworkController
 import com.astrika.checqk.discount.utils.Constants
 import com.astrika.checqk.discount.utils.Utils
 import com.astrika.checqk.discount.view.viewmodels.DiscountViewModel
-import com.astrika.checqk.discount.view.viewmodels.DiscountViewModel.Companion as DiscountViewModel1
 
 class DiscountManagementActivity : AppCompatActivity(),
     DiscountCategoriesAdapter.OnItemClickListener {
@@ -47,23 +46,48 @@ class DiscountManagementActivity : AppCompatActivity(),
 
         discountCategoriesAdapter = DiscountCategoriesAdapter(this, this)
         binding.discountCategoryRecyclerView.adapter = discountCategoriesAdapter
+
         observer()
 
-    }
-
-
-    override fun onResume() {
-        super.onResume()
-
         val bundle = intent?.extras
-        if (bundle?.containsKey("OutletId") != null) {
-            if (bundle.getLong("OutletId") != null) {
-//            val outletId = intent?.getLongExtra("OutletId", 0)
-                DiscountViewModel1.outletId.value = bundle.getLong("OutletId")
+        if (bundle?.containsKey("accessToken") != null) {
+            if (bundle.getString("accessToken") != null) {
+                val accessToken = bundle.getString("accessToken") ?: ""
+                NetworkController.accessToken = accessToken
+                sharedPreferences.edit()?.putString(
+                    Constants.ACCESS_TOKEN,
+                    Constants.encrypt(accessToken)
+                )?.apply()
             }
 
         }
+
+        if (bundle?.containsKey("productId") != null) {
+            if (bundle.getLong("productId") != null) {
+                val productId = bundle.getLong("productId")
+                discountViewModel.productId = bundle.getLong("productId")
+                sharedPreferences.edit()?.putString(
+                    Constants.PRODUCT_ID,
+                    Constants.encrypt(productId.toString())
+                )?.apply()
+            }
+
+        }
+
+        if (bundle?.containsKey("outletId") != null) {
+            if (bundle.getLong("outletId") != null) {
+                val outletId = bundle.getLong("outletId")
+                discountViewModel.outletId.value = bundle.getLong("outletId")
+                sharedPreferences.edit()?.putString(
+                    Constants.OUTLET_ID,
+                    Constants.encrypt(outletId.toString())
+                )?.apply()
+            }
+
+        }
+
     }
+
 
     private fun observer() {
 
@@ -83,20 +107,8 @@ class DiscountManagementActivity : AppCompatActivity(),
             }
         })
 
-        DiscountViewModel1.outletId.observe(this, Observer {
+        discountViewModel.outletId.observe(this, Observer {
             if (it != null && it != 0L) {
-                sharedPreferences.edit()?.putString(
-                    Constants.ACCESS_TOKEN,
-                    Constants.encrypt(NetworkController.accessToken)
-                )?.apply()
-                sharedPreferences.edit()?.putString(
-                    Constants.OUTLET_ID,
-                    Constants.encrypt(it.toString())
-                )?.apply()
-                sharedPreferences.edit()?.putString(
-                    Constants.PRODUCT_ID,
-                    Constants.encrypt(DiscountViewModel1.productId.toString())
-                )?.apply()
                 discountViewModel.populateOutletDiscountDetailsList()
             }
         })

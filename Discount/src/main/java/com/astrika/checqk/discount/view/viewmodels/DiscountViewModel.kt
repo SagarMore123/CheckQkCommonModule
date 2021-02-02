@@ -19,7 +19,6 @@ import com.astrika.checqk.discount.model.timings.DayDTO
 import com.astrika.checqk.discount.model.timings.DaysEnum
 import com.astrika.checqk.discount.model.timings.DiscountDaysTimingDTO
 import com.astrika.checqk.discount.model.timings.DiscountEnum
-import com.astrika.checqk.discount.network.NetworkController
 import com.astrika.checqk.discount.network.network_utils.IDataSourceCallback
 import com.astrika.checqk.discount.source.UserRepository
 import com.astrika.checqk.discount.utils.Constants
@@ -73,13 +72,14 @@ class DiscountViewModel(
 
     val sharedPreferences: SharedPreferences = Constants.getSharedPreferences(application)
     var observableBoolean = MutableLiveData<Boolean>(false)
+    var productId = 0L
+    var outletId = MutableLiveData<Long>(0)
 
     init {
 //        outletId.value = Constants.decrypt(sharedPreferences.getString(Constants.OUTLET_ID, ""))?.toLong() ?: 0L
 //        productId = Constants.decrypt(sharedPreferences.getString(Constants.PRODUCT_ID, ""))?.toLong() ?: 0L
         initiateDays()
         populateMasters()
-        applicationModule = application
 
         val intentToSyncImmediately = Intent(application, MasterSyncIntentService::class.java)
         intentToSyncImmediately.putExtra(Constants.IS_SPLASH_MASTER, true)
@@ -90,16 +90,12 @@ class DiscountViewModel(
 
     companion object {
 
-        lateinit var applicationModule: Application
 //        lateinit var sharedPreferences: SharedPreferences
-        var outletId = MutableLiveData<Long>(0)
-        var productId = 0L
 
         fun setAccessTokenOutletId(accessToken: String, outletId: Long, productId: Long) {
 //            sharedPreferences = Constants.getSharedPreferences(applicationModule)
-            this.outletId.value = outletId
-            this.productId = productId
-            NetworkController.accessToken = accessToken
+//            this.outletId.value = outletId
+//            NetworkController.accessToken = accessToken
 /*
             sharedPreferences.edit()?.putString(
                 Constants.ACCESS_TOKEN,

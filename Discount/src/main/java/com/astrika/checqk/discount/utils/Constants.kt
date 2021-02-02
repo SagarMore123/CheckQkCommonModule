@@ -33,7 +33,7 @@ class Constants {
         const val IS_FIRST_TIME: String = "IS_FIRST_TIME"
         const val IS_LOG_OUT: String = "IS_LOG_OUT"
         const val IS_SIGN_UP: String = "IS_SIGN_UP"
-        const val SOURCE = "OUTLETADMINAPP"
+        const val SOURCE = "RESTADMINANDROIDAPP"
         const val ROLE = "OUTLETADMIN"
         const val LOGIN_RESPONSE = "LOGIN_RESPONSE"
         const val LOGIN_ID = "LOGIN_ID"
